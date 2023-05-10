@@ -5,7 +5,8 @@ import IconButton from '@mui/material/IconButton';
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Ediform from './form';
+import App2 from './form2';
+
 export default function Home() {
 
   const Item = styled(Paper)(({ theme }) => ({
@@ -47,17 +48,17 @@ xs={12} md={10} sm={12} lg={12}
  
 xs={6} md={6} sm={6} lg={6}
    >
-<Button variant="contained"  onClick= {()=> {<Ediform></Ediform>}}>
+<Button variant="contained" >
   Create 
-
+  <input hidden  multiple type="file" />
 </Button>
 </Grid>
-
-
 </Grid>
 </Grid>
 </Item>
+
 </Box>
+
 </div>
   )
 }
