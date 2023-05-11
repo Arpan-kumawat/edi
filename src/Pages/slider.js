@@ -16,7 +16,8 @@ const images = [
   {
     label: 'SHIPMENT',
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+      'https://www.to-increase.com/hubfs/Benefits_of_EDI_Integration.png',
+   
   },
   {
     label: 'X12',

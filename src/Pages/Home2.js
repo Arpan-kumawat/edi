@@ -170,7 +170,9 @@ function ResponsiveAppBar() {
     <Grid container spacing={2} columns={16}>
   <Grid xs={6} paddingTop={3.5} paddingLeft={2} paddingRight={12}>
     <br></br>
-  <ListDividers></ListDividers>
+  <ListDividers>
+    
+  </ListDividers>
   </Grid>
   <Grid xs={6}>
   <SwipeableTextMobileStepper></SwipeableTextMobileStepper>
@@ -181,7 +183,7 @@ function ResponsiveAppBar() {
 
      
  {/* <EdiPurchaseOrderForm></EdiPurchaseOrderForm>
-      <Ediform></Ediform>*/}
+      <Ediform></Ediform> */}
 
       
   

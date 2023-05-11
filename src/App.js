@@ -2,19 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/home';
 import Ediform from './Pages/form';
-import App2 from './Pages/form2';
-import Home2 from './Pages/Home2';
-import MyFormHelperText from './Pages/slider';
-
+import ResponsiveAppBar from './Pages/Home2'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
  <>
  
-
-<Home2></Home2>
-<br></br>
-
-
+<Router>
+    
+    <Routes>
+  
+      <Route path="/" element={<ResponsiveAppBar />} />   
+      <Route path="/form" element={<Ediform />} />    
+           
+      
+    </Routes>
+  
+  </Router>
  </>
     
 
