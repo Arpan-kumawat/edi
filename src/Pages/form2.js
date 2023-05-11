@@ -148,7 +148,7 @@ class EdiPurchaseOrderForm extends React.Component {
         <br />
         <Grid>
         <label>
-          Price :
+          Price : 
           <input
             name="itemPrice"
             type="number"
