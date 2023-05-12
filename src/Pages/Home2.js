@@ -174,7 +174,10 @@ function ResponsiveAppBar() {
     
   </ListDividers>
   </Grid>
-  <Grid xs={6}>
+  <Grid  xs={12}
+          sm={10}
+          md={10}
+          lg={10} >
   <SwipeableTextMobileStepper></SwipeableTextMobileStepper>
   </Grid>
   

@@ -15,12 +15,11 @@ export default function ListDividers() {
 
   const navigate = useNavigate();
   const handleupdate = () => {
-    navigate("/form",{
-    state:{
-      status:(0)
-    }
-    })
+    navigate("/form")
  };
+ const handleupdate1 = () => {
+  navigate("/form2")
+};
 
   return (
     <List sx={style} component="nav" aria-label="mailbox folders">
@@ -28,7 +27,7 @@ export default function ListDividers() {
         <ListItemText primary="Create EDI File"   />
       </ListItem>
       <Divider />
-      <ListItem button divider>
+      <ListItem button divider  onClick={() => {handleupdate1(); }}>
         <ListItemText primary="UPload EDI file" />
       </ListItem>
       <ListItem button>
