@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 
 
 import { Margin } from "@mui/icons-material";
@@ -26,8 +26,8 @@ export default function Ediform() {
     event.preventDefault(); // Create EDI 850 file
 
 
-    console.log(ediFile);
-  };
+   
+
 
     const ediFile = `
         
@@ -76,61 +76,98 @@ export default function Ediform() {
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-
+  };
   
   return (
 
     <div>
       <form onSubmit={handleSubmit}>
+<Grid  >
+
+      <Typography  mt={5} style={{   fontSize:"large", fontWeight:"bold",  alignItems:"center",
+    display:"flex",
+    justifyContent:"center"}} >
+  EDI FORM
+</Typography>
+</Grid>
 
 
-        <Grid>
+      <Grid container  
+  direction="row"
+  justifyContent="center"
+  alignItems="center"  xs={12} sm={12}  md={12} lg={12} mt={10}>
+
+
+
+
+
+
+
+
+       <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
           <label htmlFor="poNumber" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>PO Number:</label>
 
-          <input type="text" id="poNumber" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }} value={poNumber} onChange={e => setPoNumber(e.target.value)} />
+          <input type="text" id="poNumber" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }} value={poNumber} onChange={e => setPoNumber(e.target.value)} />
+         </Grid>
+          <Grid justifyContent="center" alignItems="center"  item xs={6} sm={6}  md={6} lg={6} style={{display:"flex"}} >
+          <label htmlFor="poDate" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '2rem' }}>PO Date:</label>
 
-          <label htmlFor="poDate" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '2rem' }}>PO Date:</label>
-
-          <input type="date" id="poDate" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={poDate} onChange={e => setPoDate(e.target.value)} />
-        </Grid>
-        <Grid>
-          <label htmlFor="buyerName" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Buyer Name:</label>
-
-          <input type="text" id="buyerName" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={buyerName} onChange={e => setBuyerName(e.target.value)} />
-
-          <label htmlFor="buyerAddress" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '1.8rem' }}>Buyer Address:</label>
-
-          <input type="text" id="buyerAddress" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={buyerAddress} onChange={e => setBuyerAddress(e.target.value)} />
-        </Grid>
-        <Grid>
-          <label htmlFor="sellerName" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>Seller Name:</label>
-          <input type="text" id="sellerName" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={sellerName} onChange={e => setSellerName(e.target.value)} />
-          <label htmlFor="sellerAddress" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '1.8rem' }}>Seller Address :</label>
-          <input type="text" id="sellerAddress" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={sellerAddress} onChange={e => setSellerAddress(e.target.value)} />
-        </Grid>
-        <Grid>
-          <label htmlFor="item1" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>item 1:</label>
-          <input type="text" id="item1" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1} onChange={e => setItem1(e.target.value)} />
-
-          <label htmlFor="item1Quantity" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '4.8rem' }}>Item1Quantity:</label>
-          <input type="text" id="item1Quantity" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1Quantity} onChange={e => setItem1Quantity(e.target.value)} />
+          <input type="date" id="poDate" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={poDate} onChange={e => setPoDate(e.target.value)} />
         </Grid>
 
 
-        <Grid>
+        <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+          <label htmlFor="buyerName" style={{ fontWeight: 'bold', margin: '0.5rem' }}>Buyer Name:</label>
 
-          <label htmlFor="item2" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>item 2:</label>
-          <input type="text" id="item2" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2} onChange={e => setItem2(e.target.value)} />
-          <label htmlFor="item2Quantity" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '4.8rem' }}>item2Quantity:</label>
-          <input type="text" id="item2Quantity" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2Quantity} onChange={e => setItem2Quantity(e.target.value)} />
-        </Grid>
-        <Grid>
-          <label htmlFor="item1Price" style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>item1Price:</label>
-          <input type="text" id="item1Price" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1Price} onChange={e => setItem1Price(e.target.value)} />
+          <input type="text" id="buyerName" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={buyerName} onChange={e => setBuyerName(e.target.value)} />
+</Grid>
+ <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6} style={{display:"flex"}}  >
+          <label htmlFor="buyerAddress" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '1.8rem' }}>Buyer Address:</label>
 
-          <label htmlFor="item2Price" style={{ fontWeight: 'bold', marginBottom: '0.5rem', marginLeft: '2.8rem' }}>item2Price:</label>
-          <input type="text" id="item2Price" style={{ padding: '0.5rem', marginBottom: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2Price} onChange={e => setItem2Price(e.target.value)} />
+          <input type="text" id="buyerAddress" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={buyerAddress} onChange={e => setBuyerAddress(e.target.value)} />
         </Grid>
+
+
+      <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+          <label htmlFor="sellerName" style={{ fontWeight: 'bold', margin: '0.5rem' }}>Seller Name:</label>
+          <input type="text" id="sellerName" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={sellerName} onChange={e => setSellerName(e.target.value)} />
+         </Grid>
+         <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6} style={{display:"flex"}} >
+          <label htmlFor="sellerAddress" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '1.8rem' }}>Seller Address :</label>
+          <input type="text" id="sellerAddress" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={sellerAddress} onChange={e => setSellerAddress(e.target.value)} />
+        </Grid>
+      
+        <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+          <label htmlFor="item1" style={{ fontWeight: 'bold', margin: '0.5rem' }}>item 1:</label>
+          <input type="text" id="item1" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1} onChange={e => setItem1(e.target.value)} />
+</Grid>
+<Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6} style={{display:"flex"}}  >
+          <label htmlFor="item1Quantity" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '1.8rem' }}>Item1Quantity:</label>
+          <input type="text" id="item1Quantity" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1Quantity} onChange={e => setItem1Quantity(e.target.value)} />
+        </Grid>
+
+
+        <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+
+          <label htmlFor="item2" style={{ fontWeight: 'bold', margin: '0.5rem' }}>item 2:</label>
+          <input type="text" id="item2" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2} onChange={e => setItem2(e.target.value)} />
+         </Grid>
+         <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6} style={{display:"flex"}} >
+          <label htmlFor="item2Quantity" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '1.8rem' }}>item2Quantity:</label>
+          <input type="text" id="item2Quantity" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2Quantity} onChange={e => setItem2Quantity(e.target.value)} />
+        </Grid>
+
+       <Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+          <label htmlFor="item1Price" style={{ fontWeight: 'bold', margin: '0.5rem' }}>item1Price:</label>
+          <input type="text" id="item1Price" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item1Price} onChange={e => setItem1Price(e.target.value)} />
+</Grid>
+<Grid item justifyContent="center" alignItems="center"  xs={6} sm={6}  md={6} lg={6}  style={{display:"flex"}} >
+          <label htmlFor="item2Price" style={{ fontWeight: 'bold', margin: '0.5rem', marginLeft: '2.8rem' }}>item2Price:</label>
+          <input type="text" id="item2Price" style={{ padding: '0.5rem', margin: '1rem', borderRadius: '4px', border: '1px solid #ccc' }}  value={item2Price} onChange={e => setItem2Price(e.target.value)} />
+        </Grid>
+
+        </Grid>
+        <Grid container justifyContent="center" alignItems="center"  xs={12} sm={12}  md={12} lg={12}  style={{display:"flex"}}>
         <button
           type="submit"
           style={{
@@ -144,6 +181,7 @@ export default function Ediform() {
         >
           Submit
         </button>
+        </Grid>
 
       </form>
 
